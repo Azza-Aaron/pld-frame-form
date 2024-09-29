@@ -1,4 +1,5 @@
 import { CATEGORIES } from './categories'
+import { FORM } from './form'
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
@@ -13,6 +14,14 @@ export const CALL_TO_ACTION = `
   }
 }
 `
+
+export const FORM_BLOCK = `
+...on FormBlock {
+  blockType
+  enableIntro
+  introContent
+  ${FORM}
+}`
 
 export const CONTENT = `
 ...on Content {

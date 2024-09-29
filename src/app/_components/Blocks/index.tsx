@@ -36,7 +36,6 @@ export const Blocks: React.FC<{
         {blocks.map((block, index) => {
           //@ts-ignore
           const { blockName, blockType } = block
-          console.log('block', block)
 
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]

@@ -66,6 +66,7 @@ export const FormBlock: React.FC<
       let loadingTimerID: NodeJS.Timer
 
       const submitForm = async () => {
+        console.log('submit form hit')
         setError(undefined)
 
         const dataToSend = Object.entries(data).map(([name, value]) => ({
@@ -122,7 +123,7 @@ export const FormBlock: React.FC<
           })
         }
       }
-
+      console.log('submitting form!')
       submitForm()
     },
     [router, formID, redirect, confirmationType],
@@ -165,7 +166,13 @@ export const FormBlock: React.FC<
                   return null
                 })}
             </div>
-            <Button label={submitButtonLabel} appearance="primary" el="button" form={formID} />
+            <Button
+              label={submitButtonLabel}
+              type={'submit'}
+              appearance="primary"
+              el="button"
+              form={formID}
+            />
           </form>
         )}
       </div>
