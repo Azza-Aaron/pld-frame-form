@@ -28,14 +28,15 @@ export const Blocks: React.FC<{
   disableTopPadding?: boolean
 }> = props => {
   const { disableTopPadding, blocks } = props
-
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
 
   if (hasBlocks) {
     return (
       <Fragment>
         {blocks.map((block, index) => {
+          //@ts-ignore
           const { blockName, blockType } = block
+          console.log('block', block)
 
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]
